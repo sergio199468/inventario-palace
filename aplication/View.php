@@ -2,6 +2,12 @@
 
 class View
 {
+	/**
+	  * Clase Vista
+	 * 
+	 * @author Sergio Olan <sergio199468@gmail.com>
+	 */
+	
 	private $_controlador;
 	private $_metodo;
 	public function __construct(Request $peticion){

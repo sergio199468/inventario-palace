@@ -3,7 +3,7 @@
  * Clase Authorization
  * 
  * Clase que sirve para validar usuarios en el sistema
- * @author  Cristian Bernal <crisbera@gmail.com>
+ * @author Sergio Olan <sergio199468@gmail.com>
  */
 class Authorization{
 	

@@ -2,6 +2,14 @@
 
 class Bootstrap
 {
+
+	/**
+	 * Clase Boostrap 
+	 * Contro para ver si estan disponibles los controladores.
+	 * 
+	 * @author Sergio Olan <sergio199468@gmail.com>
+	 */
+
 	public static function run(Request $peticion){
 		$controller = $peticion->getControlador()."Controller";
 		$rutaControlador = ROOT."controllers".DS.$controller.".php";

@@ -1,5 +1,10 @@
 <?php
 class Request{
+	/**
+	  * Clase Request
+	  * 
+	  * @author Sergio Olan <sergio199468@gmail.com>
+	 */
 	private $_controlador;
 	private $_metodo;
 	private $_argumentos;

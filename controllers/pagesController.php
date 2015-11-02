@@ -1,5 +1,7 @@
 <?php
-
+/**
+	 * contolador de prueba para la bienvenida 
+	 */
 class pagesController extends AppController
 {
 	public function index(){

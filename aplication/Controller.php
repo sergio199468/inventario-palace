@@ -2,7 +2,11 @@
 
 abstract class AppController
 {
-	
+	/**
+	  * Clase abtracta AppController
+	  * 
+	  * @author Sergio Olan <sergio199468@gmail.com>
+	 */
 
 
 	protected $_view;

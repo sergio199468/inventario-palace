@@ -1,5 +1,9 @@
 <?php
-
+/**
+	 * Archivo de clase de acciones CRUD en PDO
+	 *
+	 * Clase que permite acciones CRUD de la seccion usuarios
+	 */
 class usuariosController extends AppController
 {
 	public function __construct(){
@@ -12,6 +16,9 @@ class usuariosController extends AppController
 		$this->_view->renderizar("index");
 	}
 
+     /**
+	 * Metodo de crear nuevo usuario, parte del controlador 
+	 */
 	public function add(){
 		if ($_POST) {
 			$pass = new Password();
@@ -27,6 +34,9 @@ class usuariosController extends AppController
 		$this->_view->renderizar("add");
 	}
 
+	/**
+	 * Metodo de actualizar el usuario, parte del controlador 
+	 */
 	public function edit($id = NULL){
 		if ($_POST) {
 
@@ -47,14 +57,18 @@ class usuariosController extends AppController
 		}
 	}
 
+	/**
+	 * Metodo de elminarel usuario, parte del controlador 
+	 */
 	public function delete($id = NULL){
 		$conditions = "id=".$id;
 		if ($this->db->delete("usuarios", $conditions)) {
 			$this->redirect(array("controller" => "usuarios", "action" => "index"));
 		}
 	}
-
-	//metodo de los usuarios cuando inicien en la aplicacion
+	/**
+	*Metodo de los usuarios cuando inicien en la aplicacion
+	*/
 	public function login(){
 		if ($_POST) {
 			$pass = new Password();
@@ -77,7 +91,9 @@ class usuariosController extends AppController
 		$this->_view->renderizar("login");
 	}
 
-	//metodo para destruir las sesiones activas
+	/**
+	*Metodo para destruir las sesiones activas
+	*/
 	public function logout(){
 		$auth = new Authorization();
 		$auth->logout();
