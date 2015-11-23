@@ -6,6 +6,7 @@
 class ClassPDO
 {
 	 /**
+	  * @author Sergio Olan <sergio199468@gmail.com>
 	 * Archivo de clase de conexión PDO
 	 *
 	 * Clase que permite acciones CRUD usando PDO
@@ -91,6 +92,13 @@ class ClassPDO
 
 		if (!empty($options["fields"])) {
 			$fields = $options["fields"];
+		}
+
+		if(!empty($options['join'])) // JOIN
+		{
+			
+			$parameters .= ' JOIN '.$options['join'].' ON '.$options['on'];
+		
 		}
 
 		if (!empty($options["conditions"])) {

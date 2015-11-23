@@ -18,7 +18,7 @@ class categoriasController extends AppController
 		//$tareas = $this->loadmodel("tarea");
 		
 		$this->_view->titulo = "Pagina principal";
-		$this->_view->categorias = $this->db->find("categorias", "all", NULL);
+		$this->_view->categorias = $this->categorias->find("categorias", "all", NULL);
 		$this->_view->renderizar("index");
 		/*
 		$this->_view->titulo = "Página principal";
@@ -31,7 +31,7 @@ class categoriasController extends AppController
 	 */
 	public function add(){
 		if ($_POST) {
-			if ($this->db->save("categorias", $_POST)) {
+			if ($this->categorias->save("categorias", $_POST)) {
 				$this->redirect(array("controller" =>"categorias"));
 			}else{
 				$this->redirect(array("controller" => "categorias", "action" => "add"));
@@ -47,14 +47,14 @@ class categoriasController extends AppController
 	 */
 	public function edit($id = NULL){
 		if ($_POST) {
-			if ($this->db->update("categorias", $_POST)) {
+			if ($this->categorias->update("categorias", $_POST)) {
 					$this->redirect(array("controller" => "categorias", "action" => "index"));
 				}else{
 					$this->redirect(array("controller" => "categorias", "action" => "edit/".$_POST["id"]));
 				}	
 		}else{
 			$this->_view->titulo = "Editar categoria";
-			$this->_view->categoria = $this->db->find("categorias", "first", array("conditions" => "id=".$id));
+			$this->_view->categoria = $this->categorias->find("categorias", "first", array("conditions" => "id=".$id));
 			$this->_view->renderizar("edit");
 		}
 	}
@@ -65,7 +65,7 @@ class categoriasController extends AppController
 	 */
 	public function delete($id = NULL){
 		$conditions = "id=".$id;
-		if ($this->db->delete("categorias", $conditions)) {
+		if ($this->categorias->delete("categorias", $conditions)) {
 			$this->redirect(array("controller" => "categorias", "action" => "index"));
 		}
 	}

@@ -12,7 +12,7 @@ class usuariosController extends AppController
 
 	public function index(){
 		$this->_view->titulo = "Pagina principal";
-		$this->_view->usuarios = $this->db->find("usuarios", "all", NULL);
+		$this->_view->usuarios = $this->usuarios->find("usuarios", "all", NULL);
 		$this->_view->renderizar("index");
 	}
 
@@ -23,7 +23,7 @@ class usuariosController extends AppController
 		if ($_POST) {
 			$pass = new Password();
 			$_POST["password"] = $pass->getPassword($_POST["password"]);
-			if ($this->db->save("usuarios", $_POST)) {
+			if ($this->usuarios->save("usuarios", $_POST)) {
 				$this->redirect(array("controller" =>"usuarios"));
 			}else{
 				$this->redirect(array("controller" => "usuarios", "action" => "add"));
@@ -45,14 +45,14 @@ class usuariosController extends AppController
 				$_POST["password"] = $pass->getPassword($_POST["pass"]);
 			}
 
-			if ($this->db->update("usuarios", $_POST)) {
+			if ($this->usuarios->update("usuarios", $_POST)) {
 					$this->redirect(array("controller" => "usuarios", "action" => "index"));
 				}else{
 					$this->redirect(array("controller" => "usuarios", "action" => "edit/".$_POST["id"]));
 				}	
 		}else{
 			$this->_view->titulo = "Editar usuario";
-			$this->_view->usuario = $this->db->find("usuarios", "first", array("conditions" => "id=".$id));
+			$this->_view->usuario = $this->usuarios->find("usuarios", "first", array("conditions" => "id=".$id));
 			$this->_view->renderizar("edit");
 		}
 	}
@@ -62,7 +62,7 @@ class usuariosController extends AppController
 	 */
 	public function delete($id = NULL){
 		$conditions = "id=".$id;
-		if ($this->db->delete("usuarios", $conditions)) {
+		if ($this->usuarios->delete("usuarios", $conditions)) {
 			$this->redirect(array("controller" => "usuarios", "action" => "index"));
 		}
 	}
@@ -70,6 +70,7 @@ class usuariosController extends AppController
 	*Metodo de los usuarios cuando inicien en la aplicacion
 	*/
 	public function login(){
+		$this->_view->setLayout("login");
 		if ($_POST) {
 			$pass = new Password();
 			$filter = new Validations();//sanear lo que se reciba en el formaulario
@@ -79,7 +80,7 @@ class usuariosController extends AppController
 			$password = $filter->sanitizeText($_POST["password"]);
 
 			$options = array("conditions" => "username = '$username'");
-			$usuario = $this->db->find("usuarios", "first", $options);
+			$usuario = $this->usuarios->find("usuarios", "first", $options);
 
 			if ($pass->isValid($password, $usuario["password"])) {
 				$auth->login($usuario);
@@ -88,7 +89,7 @@ class usuariosController extends AppController
 				echo "Usuario invalido";
 			}
 		}
-		$this->_view->renderizar("login");
+		//$this->_view->renderizar("login");
 	}
 
 	/**

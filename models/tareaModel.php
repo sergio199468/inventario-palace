@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Clase TareaModel
+ * 
+ */
 class TareaModel extends AppModel
 {
 	public function __construct(){

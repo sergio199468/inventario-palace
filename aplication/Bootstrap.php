@@ -5,7 +5,7 @@ class Bootstrap
 
 	/**
 	 * Clase Boostrap 
-	 * Contro para ver si estan disponibles los controladores.
+	 * Controlador para ver si estan disponibles los controladores.
 	 * 
 	 * @author Sergio Olan <sergio199468@gmail.com>
 	 */

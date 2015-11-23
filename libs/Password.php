@@ -1,5 +1,5 @@
 <?php
-/*
+/**
 * Clase para el manejo de contraseñas
 *
 */

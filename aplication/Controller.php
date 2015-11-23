@@ -11,9 +11,15 @@ abstract class AppController
 
 	protected $_view;
 
+	/**
+	 * Metodo para que cada que se intancie la clase obtendra el metodo.
+	 */
 	public function __construct(){
 		$this->_view = new View(new Request);
-		$this->db = new ClassPDO();
+		$controller = new Request();
+		$controlador = $controller->getControlador();
+
+		$this->$controlador = new ClassPDO();
 	}
 
 	abstract function index();
