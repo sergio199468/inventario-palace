@@ -25,7 +25,7 @@ class tareasController extends AppController
 
 		$this->_view->tareas = $this->tareas->find("tareas", "join", $options);
 		//$this->_view->setView('prueba');
-		$this->_view->setLayout('website');
+		//$this->_view->setLayout('website');
 		//$this->_view->setLayout("website"); Le asignamos valor si queremos para que tome difrente layout
 		//$this->_view->renderizar("index");tomoa de manera automatica el rendreizado.
 		

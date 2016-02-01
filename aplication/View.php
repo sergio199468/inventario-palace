@@ -37,6 +37,7 @@ class View
 	 */
 	public function renderizar($vista, $item = false){
 		$_layoutParams = array(
+		'ruta' => APP_URL . "views/layouts/" . $this->_layout . "/",
 		'ruta_css' => APP_URL . "views/layouts/" . $this->_layout . "/css/",
 		'ruta_img' => APP_URL . "views/layouts/" . $this->_layout . "/img/",
 		'ruta_js' => APP_URL . "views/layouts/" . $this->_layout . "/js/"
