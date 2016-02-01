@@ -29,7 +29,7 @@ class Bootstrap
 			if ($metodo=="login") {
 				
 			}else{
-				Authorization::logged();
+				//Authorization::logged();
 			}
 
 			if (isset($args)) {

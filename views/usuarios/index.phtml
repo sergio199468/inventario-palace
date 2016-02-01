@@ -2,20 +2,24 @@
 <a href="<?php echo APP_URL."usuarios/add"; ?>">Agregar usuarios</a>
 <table border="1">
 	<tr>
-		<th>ID</th>
+		<th>Id</th>
 		<th>Nombre</th>
-		<th>Fecha</th>
-		
+		<th>Apellidos</th>
+		<th>Usuario</th>
+		<th>Lugar</th>
 		<th>Estatus</th>
 		<th>Accion</th>
 	</tr>
 	<?php foreach ($this->usuarios as $usuario): ?>
 	<tr>
 		<td><?php echo $usuario["id"]; ?></td>
-		<td><?php echo $usuario["email"]; ?></td>
-		<td><?php echo $usuario["username"]; ?></td>
-		
+		<td><?php echo $usuario["nombre"]; ?></td>
+		<td><?php echo $usuario["apellido"]; ?></td>
+		<td><?php echo $usuario["usuario"]; ?></td>
 		<td><?php echo $usuario["status"]; ?></td>
+		<td><?php echo $usuario["lugar"]; ?></td>
+		
+		
 		<td><?php ?>
 			<a href="<?php echo APP_URL."usuarios/edit/".$usuario["id"]; ?>">Editar</a>
 			<a href="<?php echo APP_URL."usuarios/delete/".$usuario["id"]; ?>">Eliminar</a>

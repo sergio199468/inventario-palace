@@ -1,0 +1,7 @@
+<h2>Editar responsable</h2>
+
+<form action="<?php echo APP_URL."responsables/edit"; ?>" method="POST">
+		<input type="hidden" name="id" value="<?php echo $this->responsable["id"]; ?>">
+		<p>Nombre: <input type="text" name="nombre" value="<?php echo $this->responsable["nombre"]; ?>"></p>
+		<p><input type="submit"></p>
+</form>

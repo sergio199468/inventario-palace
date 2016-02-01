@@ -1,0 +1,7 @@
+<h2>Editar equipo</h2>
+
+<form action="<?php echo APP_URL."equipos/edit"; ?>" method="POST">
+		<input type="hidden" name="id" value="<?php echo $this->equipo["id"]; ?>">
+		<p>Nombre: <input type="text" name="nombre" value="<?php echo $this->equipo["nombre"]; ?>"></p>
+		<p><input type="submit"></p>
+</form>

@@ -1,0 +1,26 @@
+<h2>Editar departamento</h2>
+
+<form action="<?php echo APP_URL."departamentos/edit"; ?>" method="POST">
+		<input type="hidden" name="id" value="<?php echo $this->departamento["id"]; ?>">
+		<p>Nombre: <input type="text" name="nombre" value="<?php echo $this->departamento["nombre"]; ?>"></p>
+		<p>Responsable:
+		    <select name="responsables_id">
+		    
+				<?php foreach ($this->responsables as $responsable): 
+				
+		        if ($responsable["id"] == $this->departamento["responsables_id"]): ?>
+		        
+		        <option value="<?php echo $responsable["id"]; ?>" selected><?php echo $responsable["nombre"]; ?></option>
+		        
+		        <?php else: ?>
+		        
+		        <option value="<?php echo $responsable["id"]; ?>"><?php echo $responsable["nombre"]; ?></option>
+		        
+		        <?php endif; 
+				
+				endforeach; ?>
+		        
+		    </select>
+		</p>
+		<p><input type="submit"></p>
+</form>

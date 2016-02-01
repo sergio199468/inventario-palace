@@ -1,0 +1,18 @@
+<h2>Listado de responsables</h2>
+<a href="<?php echo APP_URL."responsables/add"; ?>">Agregar responsable</a>
+<table border="1">
+	<tr>
+		<th>Id</th>
+		<th>responsable</th>
+	</tr>
+	<?php foreach ($this->responsables as $responsable): ?>
+	<tr>
+		<td><?php echo $responsable["id"]; ?></td>
+		<td><?php echo $responsable["nombre"]; ?></td>
+		<td><?php ?>
+			<a href="<?php echo APP_URL."responsables/edit/".$responsable["id"]; ?>">Editar</a>
+			<a href="<?php echo APP_URL."responsables/delete/".$responsable["id"]; ?>">Eliminar</a>
+		</td>
+	</tr>	
+	<?php endforeach; ?>
+</table>

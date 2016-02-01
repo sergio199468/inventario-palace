@@ -1,10 +1,10 @@
 <?php
 
-define("DEFAULT_CONTROLLER", "tareas");
+define("DEFAULT_CONTROLLER", "usuarios");
 
-define("DEFAULT_LAYOUT", "default");
+define("DEFAULT_LAYOUT", "template");
 
-define("APP_FOLDER", "framework");//para indicar el nombre de la carpeta que contiene la aplicacion
+define("APP_FOLDER", "playacar");//para indicar el nombre de la carpeta que contiene la aplicacion
 define("APP_URL", "http://" . $_SERVER['SERVER_NAME'] . "/"  . APP_FOLDER . "/");
 
 /*

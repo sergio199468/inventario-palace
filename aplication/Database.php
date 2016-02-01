@@ -29,7 +29,7 @@ class ClassPDO
   	* Constructor de la clase
   	* @return void
   	*/
-	public function __construct($drive="mysql", $host="localhost", $database="gestion", $username="root", $password="Pctecno01"){
+	public function __construct($drive="mysql", $host="localhost", $database="inventario", $username="root", $password="Pctecno01"){
 		$this->drive = $drive;
 		$this->host = $host;
 		$this->database = $database;

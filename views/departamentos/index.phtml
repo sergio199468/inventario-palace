@@ -1,0 +1,20 @@
+<h2>Listado de departamentos</h2>
+<a href="<?php echo APP_URL."departamentos/add"; ?>">Agregar departamento</a>
+<table border="1">
+	<tr>
+		<th>Id</th>
+		<th>Departamento</th>
+		<th>Responsable</th>
+	</tr>
+	<?php foreach ($this->departamentos as $departamento): ?>
+	<tr>
+		<td><?php echo $departamento["id"]; ?></td>
+		<td><?php echo $departamento["nombre"]; ?></td>
+		<td><?php echo $departamento["responsables_id"]; ?></td>
+		<td><?php ?>
+			<a href="<?php echo APP_URL."departamentos/edit/".$departamento["id"]; ?>">Editar</a>
+			<a href="<?php echo APP_URL."departamentos/delete/".$departamento["id"]; ?>">Eliminar</a>
+		</td>
+	</tr>	
+	<?php endforeach; ?>
+</table>

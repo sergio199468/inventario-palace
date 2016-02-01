@@ -1,0 +1,7 @@
+<h2>Editar marca</h2>
+
+<form action="<?php echo APP_URL."marcas/edit"; ?>" method="POST">
+		<input type="hidden" name="id" value="<?php echo $this->marca["id"]; ?>">
+		<p>Nombre: <input type="text" name="nombre" value="<?php echo $this->marca["nombre"]; ?>"></p>
+		<p><input type="submit"></p>
+</form>

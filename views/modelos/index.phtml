@@ -1,0 +1,18 @@
+<h2>Listado de modelos</h2>
+<a href="<?php echo APP_URL."modelos/add"; ?>">Agregar modelo</a>
+<table border="1">
+	<tr>
+		<th>Id</th>
+		<th>modelo</th>
+	</tr>
+	<?php foreach ($this->modelos as $modelo): ?>
+	<tr>
+		<td><?php echo $modelo["id"]; ?></td>
+		<td><?php echo $modelo["nombre"]; ?></td>
+		<td><?php ?>
+			<a href="<?php echo APP_URL."modelos/edit/".$modelo["id"]; ?>">Editar</a>
+			<a href="<?php echo APP_URL."modelos/delete/".$modelo["id"]; ?>">Eliminar</a>
+		</td>
+	</tr>	
+	<?php endforeach; ?>
+</table>

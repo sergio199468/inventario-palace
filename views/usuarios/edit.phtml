@@ -2,9 +2,11 @@
 
 <form action="<?php echo APP_URL."usuarios/edit"; ?>" method="POST">
 		<input type="hidden" name="id" value="<?php echo $this->usuario["id"]; ?>">
-		<p>E-mail: <input type="email" name="email" value="<?php echo $this->usuario["email"]; ?>"></p>
-		<p>Username: <input type="text" name="username" value="<?php echo $this->usuario["username"]; ?>"></p>
-		<p>Password: <input type="password" name="pass" value=""></p>
-		<p>Status: <input type="text" name="status" value="<?php echo $this->usuario["status"]; ?>"></p>
+		<p>Nombre: <input type="text" name="nombre" value="<?php echo $this->usuario["nombre"]; ?>"></p>
+		<p>Apellido: <input type="text" name="apellido" value="<?php echo $this->usuario["apellido"]; ?>"></p>
+		<p>Usuario: <input type="text" name="usuario" value="<?php echo $this->usuario["usuario"]; ?>"></p>
+		<p>Password: <input type="password" name="password" value=""></p>
+		<p>Estatus: <input type="text" name="status" value="<?php echo $this->usuario["status"]; ?>"></p>
+		<p>Lugar: <input type="text" name="lugar" value="<?php echo $this->usuario["lugar"]; ?>"></p>
 		<p><input type="submit"></p>
 </form>
