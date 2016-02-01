@@ -31,15 +31,12 @@
                         <li><a href="<?php echo APP_URL; ?>">Inicio</a></li>
                         <li><a href="<?php echo APP_URL."tareas"; ?>">Tareas</a></li>
                         <li><a href="<?php echo APP_URL."usuarios"; ?>">Usuarios</a></li>
-<<<<<<< HEAD
                         <li><a href="<?php echo APP_URL."departamentos"; ?>">Departamentos</a></li>
                         <li><a href="<?php echo APP_URL."responsables"; ?>">Responsables</a></li>
                         <li><a href="<?php echo APP_URL."equipos"; ?>">Equipos</a></li>
                         <li><a href="<?php echo APP_URL."marcas"; ?>">Marcas</a></li>
                         <li><a href="<?php echo APP_URL."modelos"; ?>">Modelos</a></li>
-=======
                         <li><a href="<?php echo APP_URL."categorias"; ?>">Categorias</a></li>
->>>>>>> origin/master
                     </ul>
                 </nav>
             </div>
